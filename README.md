@@ -1,11 +1,21 @@
-# egg-multi-boilerplate
+# remotex-bff
 
-eggjs 的 boilerplate 项目
-综合了webpack,browserSync的多页应用配置
+这是remotex的bff层
 
+先放一个图
 
-## 快速入门
+<img src="https://zos.alipayobjects.com/rmsportal/kfEPBCTVsDHcTsWoNVYKftxsGlQgghJr.png" height="414" width="598"/>
 
+bff是什么，简单来说就是一个Nodejs启的服务器，用于包装服务端的api
+然后给所有的客户端提供数据，从web到native app到桌面程序
+
+同时考虑到SEO，再渲染一套PC的动态网页
+
+## 框架简述
+
+采用eggjs搭建
+
+模板引擎为nunjucks
 
 如需进一步了解，参见 [egg 文档][egg]。
 
@@ -13,7 +23,7 @@ eggjs 的 boilerplate 项目
 ```bash
 $ npm install
 $ npm run dev
-$ open http://localhost:7001/news
+$ open http://localhost:7001/
 ```
 
 ### 部署
