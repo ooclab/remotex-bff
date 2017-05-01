@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    {% block header %}
+        This is the default content
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+    This is the default content
+{% endblock %}
+
+<script src="https://cdn.bootcss.com/vue/2.3.0/vue.min.js"></script>
+{% block js %}
+    This is the default content
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,54 @@
+{
+  "name": "egg-multi-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "egg": "^1.1.0",
+    "egg-browsersync": "1.0.4-alpha.1",
+    "egg-view-nunjucks": "^2.1.0"
+  },
+  "devDependencies": {
+    "autod": "^2.8.0",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.28.0",
+    "egg-bin": "^3.3.0",
+    "egg-ci": "^1.6.0",
+    "egg-mock": "^3.4.0",
+    "eslint": "^3.19.0",
+    "eslint-config-egg": "^3.2.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.3",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.4.1",
+    "webpack-assets-manifest": "^0.6.2",
+    "webpack-merge": "^4.1.0",
+    "webstorm-disable-index": "^1.1.2"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "egg-bin dev",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod",
+    "build": "rm -rf dist/** && webpack --config build/webpack.prod.config.js"
+  },
+  "ci": {
+    "version": "6"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "MIT"
+}

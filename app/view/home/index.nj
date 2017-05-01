@@ -1,0 +1,11 @@
+{% extends "../layout/base.nj" %}
+
+{% block body %}
+    <div>
+        page home !
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="{{ helper.Loader('home') }}"></script>
+{% endblock %}
