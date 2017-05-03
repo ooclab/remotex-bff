@@ -1,4 +1,4 @@
 import './index.less'
-import {foo} from '../common/index'
+import $ from 'jquery'
 
-console.log('i am home' + foo);
+$('.ui.dropdown').dropdown();

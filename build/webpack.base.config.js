@@ -9,4 +9,8 @@ module.exports = {
     about: ['./app/public/about/index.js'],
   },
 
+  externals: {
+    jquery: "jQuery"
+  }
+
 };

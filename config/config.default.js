@@ -11,5 +11,7 @@ module.exports = appInfo => {
     defaultExtension: '.nj',
   };
 
+  config.apiHost ='114.215.221.229';
+
   return config;
 };
