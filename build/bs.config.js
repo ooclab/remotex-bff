@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const {ip} = require('../build/util');
 
 // return a function to ge bs config
 module.exports = (config) => {
@@ -12,7 +13,7 @@ module.exports = (config) => {
 // Add the client which connects to our middleware
 // You can use full urls like 'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr'
 // useful if you run your app from another point like django
-  const hotSet = `webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr&timeout=2000&overlay=false&reload=true`
+  const hotSet = `webpack-hot-middleware/client?path=http://${ip}:${port}/__webpack_hmr&timeout=2000&overlay=false&reload=true`
 // add dev-server entry
   Object.keys(webpackConfig.entry).forEach(name => {
     if (!/\./.test(name)) {
