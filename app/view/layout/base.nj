@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>RemoteX</title>
     <link href="https://cdn.bootcss.com/semantic-ui/2.2.10/semantic.min.css" rel="stylesheet">
+    {% if (ctx.app.config.env == 'prod') %}
+        <link rel="stylesheet" href="{{ helper.Loader('vendor').css }}">
+        <link rel="stylesheet" href="{{ helper.Loader(name).css }}">
+    {% endif %}
     {% block header %}
     {% endblock %}
 </head>
@@ -15,6 +19,10 @@
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/semantic-ui/2.2.10/semantic.min.js"></script>
 <script src="https://cdn.bootcss.com/vue/2.3.0/vue.min.js"></script>
+{% if (ctx.app.config.env == 'prod') %}
+    <script src="{{ helper.Loader('vendor').js }}"></script>
+{% endif %}
+<script src="{{ helper.Loader(name).js }}"></script>
 {% block js %}
 {% endblock %}
 </body>

@@ -5,6 +5,8 @@ const manifest = require('../../dist/manifest.json');
 const url = require('url');
 
 exports.Loader = function (resource) {
-  resource = manifest[resource +'.js']
-  return resource
+  return {
+    css: manifest[resource +'.css'],
+    js: manifest[resource +'.js']
+  }
 };

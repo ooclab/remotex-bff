@@ -5,5 +5,7 @@ const url = require('url');
 
 exports.Loader = function (resource) {
   const publicPath = this.app.config.browsersync.options.publicPath;
-  return url.resolve(publicPath,resource+'.js')
+  return {
+    js: url.resolve(publicPath,resource+'.js')
+  }
 };

@@ -22,7 +22,6 @@ module.exports = app => {
 
       const total = result.total;
       const {page_size, current_page} = result.filter;
-      console.log(total / page_size)
       result.filter.total_page = Math.ceil(total / page_size);
       result.filter.pagination = pagination(current_page, result.filter.total_page)
 

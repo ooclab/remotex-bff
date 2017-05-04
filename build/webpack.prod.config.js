@@ -10,14 +10,6 @@ const extractLESS = new ExtractTextPlugin('[name]/index.[contenthash].css');
 
 
 const prodConfig = {
-  context: path.resolve(__dirname, "../"),
-
-  entry: {
-    // Add the client which connects to our middleware
-    page1: ['./app/public/page1.js'],
-    page2: ['./app/public/page2.js'],
-    page3: ['./app/public/page3.js']
-  },
   output: {
     path: path.resolve(__dirname, "../dist"),
     publicPath: '/public/',

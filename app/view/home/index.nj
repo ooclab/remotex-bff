@@ -87,5 +87,4 @@
 {% endblock %}
 
 {% block js %}
-    <script src="{{ helper.Loader('home') }}"></script>
 {% endblock %}

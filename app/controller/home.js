@@ -8,9 +8,8 @@ module.exports = app => {
         p: page,
         lm: 10
       });
-      console.log(jsonResult);
       const data = {
-        name: 'egg',
+        name: 'home',
         list: jsonResult.data,
         info: jsonResult.filter
       };
