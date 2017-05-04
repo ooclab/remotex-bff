@@ -16,5 +16,5 @@ RUN npm run build
 
 ENV EGG_SERVER_ENV prod
 
-RUN npm start
+CMD ["npm", "start"]
 EXPOSE 7001
