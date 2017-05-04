@@ -3,9 +3,17 @@
 module.exports = app => {
   class HomeController extends app.Controller {
     * index() {
-      const jsonResult = yield this.ctx.service.jobs.queryJobList();
-      console.log(jsonResult)
-      const data = { name: 'egg' };
+      const page = this.ctx.params.page || 1;
+      const jsonResult = yield this.ctx.service.jobs.queryJobList({
+        p: page,
+        lm: 10
+      });
+      console.log(jsonResult);
+      const data = {
+        name: 'egg',
+        list: jsonResult.data,
+        info: jsonResult.filter
+      };
       yield this.ctx.render('home/index', data);
     }
 

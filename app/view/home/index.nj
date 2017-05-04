@@ -30,86 +30,46 @@
 
         <div class="list">
             <ul>
-                <li class="card">
-                    <h4>react网站开发<span class="price">￥1000</span></h4>
-                    <div class="tag">
-                        <span>web开发</span>
-                        <span>北京</span>
-                    </div>
-                    <div>
-                        大手大脚卡死了到家了咖啡加拉克建档立卡就打开手机啊实打实大家爱看山东矿机，
-                        大手大脚卡死了到家了咖啡加拉克建档立卡就打开手机啊实打实大家爱看山东矿机。。。<a href="#">查看更多</a>
-                    </div>
-                    <div class="label">
-                        <span>一天前发布</span>
-                        <span>浏览32次</span>
-                    </div>
-                </li>
-
-                <li class="card">
-                    <h4>react网站开发<span class="price">￥1000</span></h4>
-                    <div class="tag">
-                        <span>web开发</span>
-                        <span>北京</span>
-                    </div>
-                    <div>
-                        大手大脚卡死了到家了咖啡加拉克建档立卡就打开手机啊实打实大家爱看山东矿机，
-                        大手大脚卡死了到家了咖啡加拉克建档立卡就打开手机啊实打实大家爱看山东矿机。。。<a href="#">查看更多</a>
-                    </div>
-                    <div class="label">
-                        <span>一天前发布</span>
-                        <span>浏览32次</span>
-                    </div>
-                </li>
-
-                <li class="card">
-                    <h4>react网站开发<span class="price">￥1000</span></h4>
-                    <div class="tag">
-                        <span>web开发</span>
-                        <span>北京</span>
-                    </div>
-                    <div>
-                        大手大脚卡死了到家了咖啡加拉克建档立卡就打开手机啊实打实大家爱看山东矿机，
-                        大手大脚卡死了到家了咖啡加拉克建档立卡就打开手机啊实打实大家爱看山东矿机。。。<a href="#">查看更多</a>
-                    </div>
-                    <div class="label">
-                        <span>一天前发布</span>
-                        <span>浏览32次</span>
-                    </div>
-                </li>
-
-                <li class="card">
-                    <h4>react网站开发<span class="price">￥1000</span></h4>
-                    <div class="tag">
-                        <span>web开发</span>
-                        <span>北京</span>
-                    </div>
-                    <div>
-                        大手大脚卡死了到家了咖啡加拉克建档立卡就打开手机啊实打实大家爱看山东矿机，
-                        大手大脚卡死了到家了咖啡加拉克建档立卡就打开手机啊实打实大家爱看山东矿机。。。<a href="#">查看更多</a>
-                    </div>
-                    <div class="label">
-                        <span>一天前发布</span>
-                        <span>浏览32次</span>
-                    </div>
-                </li>
-
-                <li class="card">
-                    <h4>react网站开发<span class="price">￥1000</span></h4>
-                    <div class="tag">
-                        <span>web开发</span>
-                        <span>北京</span>
-                    </div>
-                    <div>
-                        大手大脚卡死了到家了咖啡加拉克建档立卡就打开手机啊实打实大家爱看山东矿机，
-                        大手大脚卡死了到家了咖啡加拉克建档立卡就打开手机啊实打实大家爱看山东矿机。。。<a href="#">查看更多</a>
-                    </div>
-                    <div class="label">
-                        <span>一天前发布</span>
-                        <span>浏览32次</span>
-                    </div>
-                </li>
+                {% for item in list %}
+                    <li class="card">
+                        <h4>{{ item.title }}<span class="price">￥{{ item.price }}</span></h4>
+                        <div class="tag">
+                            {% for c in item.categories %}
+                                <span>{{ c.name }}</span>
+                            {% endfor %}
+                            {% if item.city %} <span>{{ item.city }}</span>{% endif %}
+                        </div>
+                        <div>
+                            {{ item.abstract }}...<a target="_blank" href="{{ item.more_link }}">查看更多</a>
+                        </div>
+                        <div class="label">
+                            <span>{{ item.release_date }}发布</span>
+                            <span>浏览{{ item.view_count }}次</span>
+                        </div>
+                    </li>
+                {% else %}
+                    <li>This would display if the 'item' collection were empty</li>
+                {% endfor %}
             </ul>
+        </div>
+
+        <div class="ui pagination menu">
+            {% for p in info.pagination %}
+                {% if p === info.current_page %}
+                    <a class="active item" href="/p/{{ p }}">
+                        {{ p }}
+                    </a>
+                {% elif helper.util.isString(p) %}
+                    <div class="disabled item">
+                        {{ p }}
+                    </div>
+                {% else %}
+                    <a class=" item" href="/p/{{ p }}">
+                        {{ p }}
+                    </a>
+                {% endif %}
+
+            {% endfor %}
         </div>
 
     </section>
