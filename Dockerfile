@@ -11,7 +11,7 @@ WORKDIR /app
 COPY ./package.json /app/
 RUN npm install
 
-COPY . /gizmos-server/
+COPY . /app/
 RUN npm run build
 
 ENV EGG_SERVER_ENV prod
