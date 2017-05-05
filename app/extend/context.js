@@ -17,7 +17,7 @@ module.exports = {
     const apiHost = this.app.config.apiHost;
     let {query} = options;
     query = querystring.stringify(query);
-    let url = `http://${apiHost}/api${api}?${query}`;
+    let url = `${apiHost}/api${api}?${query}`;
 
     const result = yield this.curl(url, Object.assign({
       dataType: 'json',
