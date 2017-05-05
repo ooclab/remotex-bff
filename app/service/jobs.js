@@ -34,7 +34,7 @@ module.exports = app => {
 
 function pagination(curr, total) {
   let arr = [];
-  for (let i = curr + 2; i > 0 && i >= curr - 2; i--) {
+  for (let i = curr + 2 > total ? total:curr + 2; i > 0 && i >= curr - 2; i--) {
     arr.push(i);
   }
   arr = arr.reverse();
@@ -43,7 +43,7 @@ function pagination(curr, total) {
     arr.unshift(1)
   }
 
-  if (arr[arr.length - 1] <= total - 2) {
+  if (arr[arr.length - 1] <= total - 1) {
     arr.push('...')
     arr.push(total)
   }
