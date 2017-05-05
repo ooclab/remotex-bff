@@ -15,7 +15,7 @@ module.exports = app => {
     * queryJobList(query) {
       const result = yield this.ctx.fetch(`/jobx/job`, {query});
       result.data.map(item => {
-        item.more_link = `http://${apiHost}/api/jobx/job/${item.id}/url`
+        item.more_link = `${apiHost}/api/jobx/job/${item.id}/url`
         item.release_date = moment(item.release_date).format("YYYY-MM-DD HH:mm")
         return item;
       });
