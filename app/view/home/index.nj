@@ -4,7 +4,7 @@
 
     <header class="ui container fluid">
         <h1>RemoteX 快乐工作 认真生活</h1>
-        <p>
+        <p style=";">
             <b>RemoteX 远程工作空间</b>是一个开发远程/众包/外包的信息聚合平台，
             我们将需求从不同的平台汇集到这里，非盈利组织运作。
             欢迎需求方/开发方联系我们。
@@ -21,9 +21,6 @@
                 <i class="dropdown icon"></i>
 
                 <div class="menu">
-                    <div class="item">da</div>
-                    <div class="item">da</div>
-                    <div class="item">da</div>
                 </div>
             </div>
         </div>
@@ -40,7 +37,7 @@
                             {% if item.city %} <span>{{ item.city }}</span>{% endif %}
                         </div>
                         <div>
-                            {{ item.abstract }}...<a target="_blank" href="{{ item.more_link }}">查看更多</a>
+                            {{ item.abstract }}...&nbsp;<a target="_blank" href="{{ item.more_link }}">查看更多</a>
                         </div>
                         <div class="label">
                             <span>{{ item.release_date }}发布</span>
@@ -53,24 +50,27 @@
             </ul>
         </div>
 
-        <div class="ui pagination menu">
+        <div class="tac">
+          <div class="ui pagination menu">
             {% for p in info.pagination %}
-                {% if p === info.current_page %}
-                    <a class="active item" href="/p/{{ p }}">
-                        {{ p }}
-                    </a>
-                {% elif helper.util.isString(p) %}
-                    <div class="disabled item">
-                        {{ p }}
-                    </div>
-                {% else %}
-                    <a class=" item" href="/p/{{ p }}">
-                        {{ p }}
-                    </a>
-                {% endif %}
+            {% if p === info.current_page %}
+            <a class="active item" href="/p/{{ p }}">
+              {{ p }}
+            </a>
+            {% elif helper.util.isString(p) %}
+            <div class="disabled item">
+              {{ p }}
+            </div>
+            {% else %}
+            <a class=" item" href="/p/{{ p }}">
+              {{ p }}
+            </a>
+            {% endif %}
 
             {% endfor %}
+          </div>
         </div>
+
 
     </section>
 
