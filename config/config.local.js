@@ -1,5 +1,5 @@
 const path = require('path');
-const {ip} = require('../build/util');
+const { ip } = require('../build/util');
 
 module.exports = appInfo => {
   const config = {};
@@ -7,10 +7,10 @@ module.exports = appInfo => {
 
   config.browsersync = {
     configPath: path.resolve(__dirname, '../build/bs.config'),
-    options:{
+    options: {
       port: bsPort,
-      publicPath: `http://${ip}:${bsPort}/`
-    }
+      publicPath: `http://${ip}:${bsPort}/`,
+    },
   };
 
   return config;

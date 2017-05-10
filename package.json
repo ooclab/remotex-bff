@@ -40,7 +40,7 @@
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
-    "lint": "eslint .",
+    "lint": "eslint test app",
     "ci": "npm run lint && npm run cov",
     "autod": "autod",
     "build": "rm -rf dist/** && webpack --config build/webpack.prod.config.js"

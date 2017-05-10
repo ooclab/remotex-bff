@@ -10,21 +10,21 @@
  gzip {Boolean} - let you get the res object when request connected, default false. alias customResponse
  */
 const querystring = require('querystring');
-const url = require('url');
+// const url = require('url');
 
 module.exports = {
   * fetch(api, options = {}) {
     const apiHost = this.app.config.apiHost;
-    let {query} = options;
+    let { query } = options;
     query = querystring.stringify(query);
-    let url = `${apiHost}/api${api}?${query}`;
+    const url = `${apiHost}/api${api}?${query}`;
 
     const result = yield this.curl(url, Object.assign({
       dataType: 'json',
       timeout: 10000, // 默认超时时间
     }, options));
-    
-    const {data} = result;
+
+    const { data } = result;
 
     return data;
   },

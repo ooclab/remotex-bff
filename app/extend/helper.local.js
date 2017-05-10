@@ -3,9 +3,9 @@
 // this.app => application 对象
 const url = require('url');
 
-exports.Loader = function (resource) {
+exports.Loader = function(resource) {
   const publicPath = this.app.config.browsersync.options.publicPath;
   return {
-    js: url.resolve(publicPath,resource+'.js')
-  }
+    js: url.resolve(publicPath, resource + '.js'),
+  };
 };

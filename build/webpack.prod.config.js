@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackAssetsManifest = require('webpack-assets-manifest');
-const path = require("path");
+const path = require('path');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base.config');
 
@@ -11,39 +11,39 @@ const extractLESS = new ExtractTextPlugin('[name]/index.[contenthash].css');
 
 const prodConfig = {
   output: {
-    path: path.resolve(__dirname, "../dist"),
+    path: path.resolve(__dirname, '../dist'),
     publicPath: '/public/',
-    filename: '[name]/index.[chunkhash].js'
+    filename: '[name]/index.[chunkhash].js',
   },
   module: {
-    rules:[
+    rules: [
       {
         test: /\.js$/,
-        include: path.resolve(__dirname, "../app"),
+        include: path.resolve(__dirname, '../app'),
         // exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
       {
         test: /\.css$/,
-        use: extractCSS.extract([ {
+        use: extractCSS.extract([{
           loader: 'css-loader',
           options: {
-            minimize: true
-          }
-        }])
+            minimize: true,
+          },
+        }]),
       },
       {
         test: /\.less$/i,
-        use: extractLESS.extract([ {
+        use: extractLESS.extract([{
           loader: 'css-loader',
           options: {
-            minimize: true
-          }
-        }, 'less-loader' ])
+            minimize: true,
+          },
+        }, 'less-loader' ]),
       },
-    ]
+    ],
   },
-  node: {Buffer: false},
+  node: { Buffer: false },
   devtool: false,
   plugins: [
     new webpack.DefinePlugin({
@@ -51,7 +51,7 @@ const prodConfig = {
         NODE_ENV: '"production"',
       },
     }),
-    extractLESS,//设置其路径(路径相对于path)
+    extractLESS, // 设置其路径(路径相对于path)
     extractCSS,
     new WebpackAssetsManifest({
       output: 'manifest.json',
@@ -61,7 +61,7 @@ const prodConfig = {
       fileExtRegex: /\.\w{2,4}\.(?:map|gz)$|\.\w+$/i,
       sortManifest: true,
       merge: false,
-      publicPath: '/public/'
+      publicPath: '/public/',
     }),
     new webpack.optimize.UglifyJsPlugin({
       output: {
@@ -76,4 +76,4 @@ const prodConfig = {
   ],
 };
 
-module.exports = merge(baseConfig,prodConfig);
+module.exports = merge(baseConfig, prodConfig);

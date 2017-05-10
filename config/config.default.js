@@ -12,7 +12,7 @@ module.exports = appInfo => {
   };
 
 
-  config.apiHost ='https://remotex.ooclab.org';
+  config.apiHost = 'https://remotex.ooclab.org';
 
   return config;
 };
