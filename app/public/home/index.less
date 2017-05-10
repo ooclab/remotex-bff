@@ -16,12 +16,14 @@ header{
 
     h1{
         background-color: @header-color;
+        font-weight: normal;
         margin-bottom: 0;
         color: white;
     }
 
     p{
         font-size: 14px;
+        color: #333;
         background-color: white;
     }
 }
@@ -43,6 +45,7 @@ header{
         background-color: white;
         padding: 20px;
         margin-bottom: 10px;
+        box-shadow: 0 0 3px rgba(0,0,0,.1);
 
         h4{
             margin-bottom: 10px;
@@ -56,8 +59,8 @@ header{
         }
 
         .price{
-            font-size: 14px;
-            color: #666666;
+            font-size: 16px;
+            color: #666;
             float: right;
         }
 
@@ -89,8 +92,37 @@ header{
 .tac {
     text-align: center;
     margin: 20px 0;
-    .pagination {
+    .ui.menu.pagination{
+        box-shadow: none;
+        border: none;
+        background: none;
+        
+        .item{
+            border: none;
+            color: #4990e2;
+            background: none;
+            height: 24px;
+            font-size: 12px;
+            padding: 0;
+            border-radius: 2px;
+            width: auto;
+            padding: 0 10px;
+            box-sizing: border-box; 
+            text-align:center;
+            min-width: 24px;
+            display: inline-block;
+            line-height: 24px;
+            font-family: semi-bold;
 
+            &.active{
+                background: #aaa;
+                color: #fff;
+                cursor: default;
+            }
+            &:before{
+                content: none;
+            }
+        }
     }
 }
 
