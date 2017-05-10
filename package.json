@@ -7,7 +7,8 @@
     "egg": "^1.1.0",
     "egg-browsersync": "1.0.4-alpha.1",
     "egg-view-nunjucks": "^2.1.0",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "numeral": "^2.0.6"
   },
   "devDependencies": {
     "autod": "^2.8.0",
