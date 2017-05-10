@@ -29,7 +29,7 @@
             <ul>
                 {% for item in list %}
                     <li class="card">
-                        <h4>{{ item.title }}<span class="price">￥{{ item.price }}</span></h4>
+                        <h4>{{ item.title }}<span class="price">&nbsp;&yen;{{ item.price }}</span></h4>
                         <div class="tag">
                             {% for c in item.categories %}
                                 <span>{{ c.name }}</span>
@@ -37,11 +37,12 @@
                             {% if item.city %} <span>{{ item.city }}</span>{% endif %}
                         </div>
                         <div>
-                            {{ item.abstract }}...&nbsp;<a target="_blank" href="{{ item.more_link }}">查看更多</a>
+                            {{ item.abstract }}...&nbsp;<a class="link" target="_blank" href="{{ item.more_link }}">查看更多</a>
                         </div>
                         <div class="label">
                             <span>{{ item.release_date }}发布</span>
                             <span>浏览{{ item.view_count }}次</span>
+                            <span>来源: {{ item.platform.name }}</span>
                         </div>
                     </li>
                 {% else %}

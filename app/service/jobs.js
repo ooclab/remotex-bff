@@ -6,7 +6,10 @@
  * /jobx/job 获取job列表
  *
  */
+
 const moment = require('moment');
+const numeral = require('numeral');
+require('moment/locale/zh-cn');
 
 module.exports = app => {
   const apiHost = app.config.apiHost;
@@ -15,8 +18,10 @@ module.exports = app => {
     * queryJobList(query) {
       const result = yield this.ctx.fetch(`/jobx/job`, {query});
       result.data.map(item => {
+        item.platform.name = item.platform.name || '-';
         item.more_link = `${apiHost}/api/jobx/job/${item.id}/url`
-        item.release_date = moment(item.release_date).format("YYYY-MM-DD HH:mm")
+        item.release_date = moment(item.release_date).startOf('day').fromNow()
+        item.price = numeral(item.price).format('0,0')
         return item;
       });
 
