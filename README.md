@@ -1,5 +1,7 @@
 # remotex-bff
 
+[![build status][travis-image]][travis-url]
+
 这是remotex的bff层
 
 先放一个图
@@ -47,3 +49,5 @@ $ EGG_SERVER_ENV=prod npm start
 
 
 [egg]: https://eggjs.org
+[travis-image]: https://img.shields.io/travis/ooclab/remotex-bff.svg?style=flat-square
+[travis-url]: https://www.travis-ci.org/ooclab/remotex-bff.svg?branch=master

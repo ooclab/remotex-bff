@@ -5,12 +5,12 @@ module.exports = {
 
   entry: {
     // Add the client which connects to our middleware
-    home: ['./app/public/home/index.js'],
-    about: ['./app/public/about/index.js'],
+    home: [ './app/public/home/index.js' ],
+    about: [ './app/public/about/index.js' ],
   },
 
   externals: {
-    jquery: "jQuery"
-  }
+    jquery: 'jQuery',
+  },
 
 };

@@ -36,18 +36,19 @@
                                 {{ item.city }}
                             </span>
                             {% endif %}
-                            <span class="price">￥{{ item.price }}</span></h4>
+                            <span class="price">&nbsp;&yen;{{ item.price }}</span></h4>
                         <div class="tag">
                             {% for c in item.categories %}
                                 <span>{{ c.name }}</span>
                             {% endfor %}
                         </div>
                         <div>
-                            {{ item.abstract }}...&nbsp;<a target="_blank" href="{{ item.more_link }}">查看更多</a>
+                            {{ item.abstract }}...&nbsp;<a class="link" target="_blank" href="{{ item.more_link }}">查看更多</a>
                         </div>
                         <div class="label">
                             <span>发布于 {{ item.release_date | dateFriendlyFilter }}</span>
                             <span>浏览{{ item.view_count }}次</span>
+                            <span>来源: {{ item.platform.name }}</span>
                         </div>
                     </li>
                 {% else %}

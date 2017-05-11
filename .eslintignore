@@ -1,1 +1,6 @@
 coverage
+build
+dist
+node_modules
+run
+app/public

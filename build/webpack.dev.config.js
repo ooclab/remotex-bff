@@ -21,16 +21,16 @@ const devConfig = {
       {
         test: /\.css$/,
         use: [
-          "style-loader",
-          "css-loader",
+          'style-loader',
+          'css-loader',
         ],
       },
       {
         test: /\.less$/i,
         use: [
-          "style-loader",
-          "css-loader",
-          "less-loader"
+          'style-loader',
+          'css-loader',
+          'less-loader',
         ],
       },
     ],
@@ -43,4 +43,4 @@ const devConfig = {
   ],
 };
 
-module.exports = merge(baseConfig,devConfig);
+module.exports = merge(baseConfig, devConfig);

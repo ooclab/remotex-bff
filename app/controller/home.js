@@ -6,12 +6,12 @@ module.exports = app => {
       const page = this.ctx.params.page || 1;
       const jsonResult = yield this.ctx.service.jobs.queryJobList({
         p: page,
-        lm: 10
+        lm: 10,
       });
       const data = {
         name: 'home',
         list: jsonResult.data,
-        info: jsonResult.filter
+        info: jsonResult.filter,
       };
       
       yield this.ctx.render('home/index', data);
