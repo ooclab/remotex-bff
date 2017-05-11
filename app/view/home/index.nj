@@ -46,7 +46,7 @@
                             {{ item.abstract }}...&nbsp;<a class="link" target="_blank" href="{{ item.more_link }}">查看更多</a>
                         </div>
                         <div class="label">
-                            <span>发布于 {{ item.release_date | dateFriendlyFilter }}</span>
+                            <span>发布于 {{ item.release_date }}</span>
                             <span>浏览{{ item.view_count }}次</span>
                             <span>来源: {{ item.platform.name }}</span>
                         </div>
