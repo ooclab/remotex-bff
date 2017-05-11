@@ -13,7 +13,7 @@ module.exports = app => {
         list: jsonResult.data,
         info: jsonResult.filter,
       };
-      
+
       yield this.ctx.render('home/index', data);
     }
 
