@@ -1,6 +1,7 @@
 @import "../common/index";
 @main-text-color:#393B53;
 @button-color:#11BDE9;
+@logo-url:"/public/image/assets/icon_logo.png";
 .icon(@url){
     background-image: url(@url);
     background-position: 50% 50%;
@@ -31,7 +32,7 @@ header{
         height: 80px;
         width: 230px;
         float:left;
-        .icon("/public/image/assets/icon_logo.png");
+        .icon(@logo-url);
         background-size: auto 22px;
         background-position: 0 50%;
     }
@@ -240,8 +241,49 @@ header{
 
 footer{
     background-color: @header-color;
-    color: white;
-    padding: 80px 0 0;
+    padding-top: 80px;
+    section.ui.container.aboutus{
+        display: flex;
+        & > div{
+            flex: 1;
+            box-sizing: border-box;
+            text-align: left;
+            h1{
+                height: 20px;
+                line-height: 20px;
+                font-size: 20px;
+                font-weight: normal;
+                margin-bottom: 32px;
+                color: #3D3E4F;
+                &.logo{
+                    .icon(@logo-url);
+                    background-size: auto 18px;
+                    background-position: 0 50%;
+                }
+            }
+            p{
+                font-size: 14px;
+                line-height: 26px;
+                color: #606168;
+            }
+        }
+        .part-1{
+            flex: 1;
+            padding-right: 120px;
+        }
+    }
+    .copyright{
+        margin-top: 60px;
+        height: 85px;
+        border-top: 1px solid #E0E0E0;
+        p{
+            font-size: 12px;
+            line-height: 12px;
+            margin-top: 30px;
+            color: #606168;
+            font-family: Arial;
+        }
+    }
 
     .grid{
         width: 600px;
