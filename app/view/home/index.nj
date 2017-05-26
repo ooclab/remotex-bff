@@ -3,24 +3,26 @@
 {% block body %}
 
     <header class="ui container fluid">
-        <h1>RemoteX 快乐工作 认真生活</h1>
-        <p style=";">
-            <b>RemoteX 远程工作空间</b>是一个开发远程/众包/外包的信息聚合平台，
-            我们将需求从不同的平台汇集到这里，非盈利组织运作。
-            欢迎需求方/开发方联系我们。
-        </p>
+        <div class="ui container">
+            <div class="logo"></div>
+            <div class="right-menu">
+                <div class="button">注册</div>
+                <div class="button highlight">登陆</div>
+            </div>
+        </div>
     </header>
-
+    <section class="search">
+        <input type="text" placeholder="请输入关键字">
+    </section>
     <section class="ui container content">
         <div class="title">
             <h3>工作机会</h3>
-            <div class="ui dropdown">
-                <div class="text">
-                    排序: 最新
+            <div class="ui sortby">
+                <div class="sortby asc">
+                    时间筛选
                 </div>
-                <i class="dropdown icon"></i>
-
-                <div class="menu">
+                <div class="sortby desc">
+                    价格筛选
                 </div>
             </div>
         </div>
@@ -29,6 +31,7 @@
             <ul>
                 {% for item in list %}
                     <li class="card">
+                        <div class="icon"></div>
                         <h4>{{ item.title }}
                             {% if item.city %}
                             <span class="city">
@@ -37,18 +40,13 @@
                             </span>
                             {% endif %}
                             <span class="price">&nbsp;&yen;{{ item.price }}</span></h4>
-                        <div class="tag">
-                            {% for c in item.categories %}
-                                <span>{{ c.name }}</span>
-                            {% endfor %}
-                        </div>
                         <div>
                             {{ item.abstract }}...&nbsp;<a class="link" target="_blank" href="{{ item.more_link }}">查看更多</a>
                         </div>
                         <div class="label">
                             <span>发布于 {{ item.release_date }}</span>
                             <span>浏览{{ item.view_count }}次</span>
-                            <span>来源: {{ item.platform.name }}</span>
+                            <span><i class="fa fa-paperclip"></i> &nbsp; {{ item.platform.name }}</span>
                         </div>
                     </li>
                 {% else %}
@@ -82,14 +80,39 @@
     </section>
 
     <footer class="ui container fluid ">
-        <h3>联系方式</h3>
-        <div class="ui three column grid">
-            <ul class="row">
-                <li class="column">邮件: admin@ooclab.org</li>
-                <li class="column">qq群: remotex 633498747</li>
-                <li class="column">微信群: 加 lijian_gnu.拉入群</li>
-            </ul>
-        </div>
+        <section class="ui container aboutus">
+            <div class="part-1">
+                <h1 class="logo"></h1>
+                <p>RemoteX 远程工作空间是一个开发远程/众包/外包的信息聚合平台， 我们将需求从不同的平台汇集到这里，非盈利组织运作。 欢迎需求方/开发方联系我们。</p>
+            </div>
+            <div class="part-2">
+                <h1>关于</h1>
+                <p>联系我们<br/>
+                媒体报道<br/>
+                案例展示<br/>
+                服务条款<br/>
+                </p>
+            </div>
+            <div class="part-3">
+                <h1>社区</h1>
+                <p>社区论坛<br/>
+                如何发布工作<br/>
+                文档与支持<br/>
+                客服支持<br/>
+                </p>
+            </div>
+            <div class="part-4">
+                <h1>联系我们</h1>
+                <p>产品咨询：<br/>
+                admin@ooclab.org<br/>
+                客服电话：<br/>
+                010-88996622<br/>
+                </p>
+            </div>
+        </section>
+        <section class="ui container copyright">
+            <p>©2017 RemoteX. All right reserved.</p>
+        </section>
     </footer>
 {% endblock %}
 

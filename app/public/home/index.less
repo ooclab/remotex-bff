@@ -1,16 +1,24 @@
 @import "../common/index";
-
+@main-text-color:#393B53;
+@button-color:#11BDE9;
+@logo-url:"/public/image/assets/icon_logo.png";
+.icon(@url){
+    background-image: url(@url);
+    background-position: 50% 50%;
+    background-size: auto auto;
+    background-repeat: no-repeat;
+}
 body{
     background-color: @bg-color;
 }
 
 header{
     overflow: hidden;
+    background: #fff;
 
     &>*{
-        height: 50px;
-        line-height: 50px;
-        padding-left: 20px;
+        height: 80px;
+        line-height: 80px;
 
     }
 
@@ -18,7 +26,34 @@ header{
         background-color: @header-color;
         font-weight: normal;
         margin-bottom: 0;
-        color: white;
+        color: @main-text-color;
+    }
+    .logo{
+        height: 80px;
+        width: 230px;
+        float:left;
+        .icon(@logo-url);
+        background-size: auto 22px;
+        background-position: 0 50%;
+    }
+    .right-menu{
+        float: right;
+        overflow: visible;
+        .button{
+            height: 36px;
+            line-height: 36px;
+            float: left;
+            width: 120px;
+            text-align: center;
+            color: @main-text-color;
+            margin: 22px 0;
+            cursor: pointer;
+            &.highlight{
+                background: @button-color;
+                color: #fff;
+                border-radius: 2px;
+            }
+        }
     }
 
     p{
@@ -27,15 +62,67 @@ header{
         background-color: white;
     }
 }
+.search{
+    margin: 70px auto 0;
+    width: 600px;
+    background: #fff;
+    border-radius: 2px;
+    height: 54px;
+    border: 1px solid #EAEDF3;
+    box-sizing: border-box;
+    .icon("/public/image/assets/icon_search.png");
+    background-position: 558px 17px;
+    input{
+        box-sizing: border-box;
+        border: none;
+        background: rgba(0,0,0,0);
+        height: 100%;
+        width: 100%;
+        outline: none;
+        font-size: 17px;
+        line-height: 100%;
+        padding: 0 80px 0 20px;
+        color: #9B9B9B;
+        &::placeholder{
+            color: #9B9B9B;
+        }
+    }
 
+}
 .content{
-    margin-top: 20px;
+    margin-top: 80px;
 
     h3{
-        float: left;
+        float: none;
+        display: inline-block;
+        font-size: 24px;
+        color: #3D3E4F;
+        font-weight: normal;
+        margin: 0 0 6px;
     }
-    .dropdown{
+    .sortby.ui{
         float: right;
+        overflow: visible;
+        height: 24px;
+        .sortby{
+            width: 85px;
+            text-align: left;
+            margin-left: 40px;
+            float: left;
+            height: 24px;
+            line-height: 24px;
+            font-size: 16px;
+            cursor: pointer;
+            &.asc{
+                .icon("/public/image/assets/arrow_up.png");
+                background-position: 100% 50%;
+            }
+            &.desc{
+                .icon("/public/image/assets/arrow_down.png");
+                background-position: 100% 50%;
+            }
+            
+        }
     }
     .list{
         clear: both;
@@ -43,24 +130,39 @@ header{
 
     .card{
         background-color: white;
-        padding: 20px;
-        margin-bottom: 10px;
-        box-shadow: 0 0 3px rgba(0,0,0,.1);
-
+        padding: 30px 30px 30px 124px;
+        margin: 30px 0 0;
+        position: relative;
+        .icon{
+            height: 64px;
+            width: 64px;
+            position:absolute;
+            top: 30px;
+            left: 30px;
+            background:#f2f2f2;
+        }
         h4{
-            margin-bottom: 10px;
+            margin:0 0 10px 0;
+            font-size: 20px;
+            line-height: 20px;
+            font-weight: normal;
+            color: @main-text-color;
         }
 
         .city{
             padding-left: 20px;
-            font-size: 12px;
+            font-size: 14px;
+            height: 20px;
+            line-height: 20px;
+            display: inline-block;
             color: #999;
             font-weight: normal;
+            vertical-align: top;
         }
 
         .price{
-            font-size: 16px;
-            color: #666;
+            font-size: 20px;
+            color: @main-text-color;
             float: right;
         }
 
@@ -81,6 +183,11 @@ header{
                 padding: 5px;
                 margin-right: 10px;
             }
+        }
+        h4 + div{
+            margin-top: 25px;
+            color: #606168;
+            line-height: 26px;
         }
 
         .label{
@@ -105,23 +212,23 @@ header{
         
         .item{
             border: none;
-            color: #4990e2;
+            color: #747575;
             background: none;
-            height: 24px;
+            height: 28px;
             font-size: 12px;
             padding: 0;
             border-radius: 2px;
-            width: auto;
+            width: 28px;
             padding: 0 10px;
             box-sizing: border-box; 
             text-align:center;
             min-width: 24px;
             display: inline-block;
-            line-height: 24px;
+            line-height: 28px;
             font-family: semi-bold;
 
             &.active{
-                background: #aaa;
+                background: @button-color;
                 color: #fff;
                 cursor: default;
             }
@@ -134,8 +241,49 @@ header{
 
 footer{
     background-color: @header-color;
-    color: white;
-    padding: 20px;
+    padding-top: 80px;
+    section.ui.container.aboutus{
+        display: flex;
+        & > div{
+            flex: 1;
+            box-sizing: border-box;
+            text-align: left;
+            h1{
+                height: 20px;
+                line-height: 20px;
+                font-size: 20px;
+                font-weight: normal;
+                margin-bottom: 32px;
+                color: #3D3E4F;
+                &.logo{
+                    .icon(@logo-url);
+                    background-size: auto 18px;
+                    background-position: 0 50%;
+                }
+            }
+            p{
+                font-size: 14px;
+                line-height: 26px;
+                color: #606168;
+            }
+        }
+        .part-1{
+            flex: 1;
+            padding-right: 120px;
+        }
+    }
+    .copyright{
+        margin-top: 60px;
+        height: 85px;
+        border-top: 1px solid #E0E0E0;
+        p{
+            font-size: 12px;
+            line-height: 12px;
+            margin-top: 30px;
+            color: #606168;
+            font-family: Arial;
+        }
+    }
 
     .grid{
         width: 600px;
