@@ -83,30 +83,27 @@
         <section class="ui container aboutus">
             <div class="part-1">
                 <h1 class="logo"></h1>
-                <p>RemoteX 远程工作空间是一个开发远程/众包/外包的信息聚合平台， 我们将需求从不同的平台汇集到这里，非盈利组织运作。 欢迎需求方/开发方联系我们。</p>
+                <p>RemoteX 是一个关于远程、兼职、外包、众包等信息的聚合平台， 我们将需求从不同的平台汇集到这里，非盈利组织运作。 欢迎需求方、开发方联系我们。</p>
             </div>
             <div class="part-2">
                 <h1>关于</h1>
                 <p>联系我们<br/>
-                媒体报道<br/>
                 案例展示<br/>
                 服务条款<br/>
                 </p>
             </div>
             <div class="part-3">
                 <h1>社区</h1>
-                <p>社区论坛<br/>
+                <p><a href="https://github.com/ooclab/remotex" target="_blank">Github</a><br/>
+                <a href="https://wp.ooclab.org/projects/remotex" target="_blank">项目管理</a><br/>
                 如何发布工作<br/>
                 文档与支持<br/>
-                客服支持<br/>
                 </p>
             </div>
             <div class="part-4">
                 <h1>联系我们</h1>
                 <p>产品咨询：<br/>
                 admin@ooclab.org<br/>
-                客服电话：<br/>
-                010-88996622<br/>
                 </p>
             </div>
         </section>
