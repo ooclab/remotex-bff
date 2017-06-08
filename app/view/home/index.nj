@@ -5,7 +5,6 @@
     <header class="ui container fluid">
         <div class="ui container">
             <div class="logo">
-                <img src="https://img.ooclab.com/remotex/logo.png"/>
             </div>
             <div class="right-menu">
                 <div class="button">注册</div>
@@ -34,7 +33,6 @@
                 {% for item in list %}
                     <li class="card">
                         <div class="icon">
-                            <img src="https://img.ooclab.com/remotex/cleancode.png"/>
                         </div>
                         <h4>{{ item.title }}
                             {% if item.city %}
