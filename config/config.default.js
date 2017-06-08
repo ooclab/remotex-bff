@@ -11,8 +11,7 @@ module.exports = appInfo => {
     defaultExtension: '.nj',
   };
 
-
-  config.apiHost = 'https://remotex.ooclab.org';
+  config.apiHost = process.env.API_HOST || 'https://remotex.ooclab.org';
 
   return config;
 };
