@@ -34,7 +34,7 @@
                 {% for item in list %}
                     <li class="card">
                         <div class="icon">
-                            <img src="https://img.ooclab.com/remotex/cleancode.png"/>
+                            <img class="job-logo" src="https://img.ooclab.com/remotex/cleancode.png"/>
                         </div>
                         <h4>{{ item.title }}
                             {% if item.city %}
