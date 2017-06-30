@@ -5,7 +5,6 @@
     <header class="ui container fluid">
         <div class="ui container">
             <div class="logo">
-                <img src="https://img.ooclab.com/remotex/logo.png"/>
             </div>
             <div class="right-menu">
                 <div class="button">注册</div>
@@ -34,7 +33,6 @@
                 {% for item in list %}
                     <li class="card">
                         <div class="icon">
-                            <img class="job-logo" src="https://img.ooclab.com/remotex/cleancode.png"/>
                         </div>
                         <h4>{{ item.title }}
                             {% if item.city %}
@@ -99,7 +97,6 @@
             <div class="part-3">
                 <h1>社区</h1>
                 <p><a href="https://github.com/ooclab/remotex" target="_blank">Github</a><br/>
-                <a href="https://wp.ooclab.org/projects/remotex" target="_blank">项目管理</a><br/>
                 如何发布工作<br/>
                 文档与支持<br/>
                 </p>
